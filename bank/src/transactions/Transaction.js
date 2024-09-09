@@ -5,7 +5,7 @@ import { formatDate } from './formatDate';
 
 const Transaction = () => {
   const [transactions, setTransactions] = useState([]);
-  const [error, setError] = useState('');
+  
   const { selectedAccount } = useContext(UserContext);
   useEffect(() => {
     // Fetch transactions from the API
@@ -14,7 +14,7 @@ const Transaction = () => {
         const response = await axios.get(`http://localhost:8080/transactions/${selectedAccount}`);
         setTransactions(response.data.transactions);
       } catch (err) {
-        setError('Error fetching transactions');
+       
         console.error('Error:', err.response ? err.response.data : err.message);
       }
     };
@@ -25,7 +25,7 @@ const Transaction = () => {
   return (
     <div className="transaction-page">
       <h2>Transaction History</h2>
-      {error && <p className="error-message">{error}</p>}
+     
       {transactions.length > 0 ? (
         <table className="transaction-table">
           <thead>

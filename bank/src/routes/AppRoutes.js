@@ -7,6 +7,7 @@ import AddAccount from '../transactions/AddAccount';
 import PrimaryAccount from '../home/PrimaryAccount';
 import SendMoney from '../transactions/SendMoney';
 import Transaction from '../transactions/Transaction';
+import UpdateProfile from '../home/UpdateProfile';
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes = () => {
   <Route path='/set-primary-account' element={<PrimaryAccount/>}/>
   <Route path='/send-money' element={<SendMoney/>}/>
   <Route path='/transactions' element={<Transaction/>}/>
+  <Route path='/update-profile' element={<UpdateProfile/>}/>
   </Routes>
   )
 }

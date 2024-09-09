@@ -37,6 +37,9 @@ const Home = () => {
   const handleSetPrimary = () => {
     navigate('/set-primary-account');
   };
+  const handleUpdateProfile = () => {
+    navigate('/update-profile');
+  };
   const handleAccountSelection = (accountId) => {
     setSelectedAccount(accountId); // Set selected account ID
   
@@ -50,6 +53,7 @@ const Home = () => {
       <p className="home-info">Email: {user.email}</p>
       <p className="home-info">Address: {user.address}</p>
 </div>
+
       {accounts && accounts.length > 0 ? (
         <div className="accountsList">
           <h2>Accounts</h2>
@@ -92,10 +96,11 @@ const Home = () => {
         <p>No accounts found. Please add an account.</p>
       )}
       <div className="transactions">
-        <button className="logout" onClick={handleLogout}>Logout</button>
+      <button class="AllBtn"  onClick={handleUpdateProfile}>Update Profile</button>
         <button class="AllBtn"  onClick={handleAddAccount}>Add Account</button>
         <button className="AllBtn" onClick={handleTransaction}>Transaction</button>
         <button className="AllBtn" onClick={handleSendMoney}>Send Money</button>
+        <button className="logout" onClick={handleLogout}>Logout</button>
       </div>
 
   
